@@ -1,10 +1,15 @@
 'use client'
 import { usePathname } from "next/navigation";
+import { FaUser } from "react-icons/fa";
 
 import './styles/colors.css';
+import './styles/sizes.css';
 
 import Logo from './resources/logo.webp';
+
 import Image from "next/image";
+import InputSearch from "./components/inputSearch";
+import ButtonResponsive from "./components/buttonResp";
 
 export default function Home() {
   const location = usePathname();
@@ -19,8 +24,29 @@ export default function Home() {
         font-[family-name:var(--font-geist-sans)]
       "
     >
-      <header className="secondary-bg absolute inset-x-0 top-0 p-4">
-        <Image className="rounded-full" src={Logo} alt="Site-image" width={100} height={100}/>
+      <header 
+        className="
+          secondary-bg absolute 
+          inset-x-0 top-0 p-4 flex 
+          items-center 
+          justify-between
+        "
+      >
+        <div className="header-page items-center">
+          <div className="flex items-center me-4">
+            <Image className="rounded-full m-3" src={Logo} alt="Site-image" width={100} height={100}/>
+            <div className="">
+              <h1 className="Text-header font-semibold">Bienvenido a la CheemStore</h1>
+              <h2 className="Sub-Text-header">Lo mejor de lo mejor</h2>
+            </div>
+          </div>
+          <div className="p-4 items-center">
+            <InputSearch className="full-width" placeholder=" Busca lo que mas te intersa"/>
+          </div>
+        </div>
+        <div>
+          <ButtonResponsive icon={<FaUser/>} text="Inicia sesión"/>
+        </div>
       </header>
       <main 
         className="
