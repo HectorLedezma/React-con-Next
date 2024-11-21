@@ -1,7 +1,33 @@
+:root{
+    --primary-color: black;
+    --secondary-color: rgb(44, 44, 44);
+}
+
 .primary-bg{
-    background-color: black;
+    background-color: var(--primary-color);
 }
 
 .secondary-bg{
-    background-color: rgb(44, 44, 44);
+    background-color: var(--secondary-color);
+}
+
+.primary-bg-op{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.secondary-bg-op{
+    background-color: rgba(44, 44, 44, 0.5);
+}
+
+.transparent{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+.selectable{
+    background-color: var(--primary-color);
+}
+
+.selectable:hover{
+    background-color: var(--secondary-color);
 }
